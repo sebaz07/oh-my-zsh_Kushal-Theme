@@ -115,8 +115,21 @@ alias lsd='ls --color=auto --group-directories-first -lh'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-alias bat="batcat"
+alias cat="bat"
+alias ls="eza --icons --group-directories-first"
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+
+# Definir widget prepend-sudo
+prepend-sudo() {
+  BUFFER="sudo $BUFFER"
+  CURSOR=$#BUFFER
+}
+zle -N prepend-sudo
+
+# Asignar doble ESC (Esc Esc) al widget
+bindkey '\e\e' prepend-sudo
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
