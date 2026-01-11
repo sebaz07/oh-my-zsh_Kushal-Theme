@@ -1,5 +1,21 @@
 # Powerlevel10k config optimizada para SebazGod
-# Reducida de ~1800 líneas a ~350 líneas manteniendo toda la funcionalidad
+# Reducida de ~1800 líneas a ~350 líneas manteniendo toda la fu  # IP
+    # IP
+  typeset -g POWERLEVEL9K_IP_FOREGROUND=051
+  typeset -g POWERLEVEL9K_IP_INTERFACE='(en.*|br.*)'
+  typeset -g POWERLEVEL9K_IP_VISUAL_IDENTIFIER_EXPANSION=''
+
+  # Kubernetes context
+  typeset -g POWERLEVEL9K_KUBECONTEXT_BACKGROUND=33  # Azul Kubernetes
+  typeset -g POWERLEVEL9K_KUBECONTEXT_FOREGROUND=255 # Blanco
+  typeset -g POWERLEVEL9K_KUBECONTEXT_VISUAL_IDENTIFIER_EXPANSION=''g POWERLEVEL9K_IP_FOREGROUND=051
+  typeset -g POWERLEVEL9K_IP_INTERFACE='(en.*|br.*)'
+  typeset -g POWERLEVEL9K_IP_VISUAL_IDENTIFIER_EXPANSION='󰈀'
+
+  # Kubernetes context
+  typeset -g POWERLEVEL9K_KUBECONTEXT_BACKGROUND=33  # Azul Kubernetes
+  typeset -g POWERLEVEL9K_KUBECONTEXT_FOREGROUND=255 # Blanco
+  typeset -g POWERLEVEL9K_KUBECONTEXT_VISUAL_IDENTIFIER_EXPANSION=''ad
 
 'builtin' 'local' '-a' 'p10k_config_opts'
 [[ ! -o 'aliases'         ]] || p10k_config_opts+=('aliases')
@@ -17,7 +33,7 @@
   # ═══════════════════════════════════════════════════════════════════════════════
   
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    os_icon terminal example ip example2
+    os_icon terminal example ip kubecontext example2
     newline
     time date dir
     newline
@@ -73,6 +89,7 @@
   # Terminal
   typeset -g POWERLEVEL9K_TERMINAL_BACKGROUND=045
   typeset -g POWERLEVEL9K_TERMINAL_FOREGROUND=016
+  typeset -g POWERLEVEL9K_TERMINAL_VISUAL_IDENTIFIER_EXPANSION=''
 
   # Example segments
   typeset -g POWERLEVEL9K_EXAMPLE_BACKGROUND=235
@@ -112,7 +129,12 @@
   # IP
   typeset -g POWERLEVEL9K_IP_FOREGROUND=051
   typeset -g POWERLEVEL9K_IP_INTERFACE='(en.*|br.*)'
-  typeset -g POWERLEVEL9K_IP_VISUAL_IDENTIFIER_EXPANSION=''
+  typeset -g POWERLEVEL9K_IP_VISUAL_IDENTIFIER_EXPANSION=' '
+
+  # Kubernetes context
+  typeset -g POWERLEVEL9K_KUBECONTEXT_BACKGROUND=33  # Azul Kubernetes
+  typeset -g POWERLEVEL9K_KUBECONTEXT_FOREGROUND=255 # Blanco
+  typeset -g POWERLEVEL9K_KUBECONTEXT_VISUAL_IDENTIFIER_EXPANSION=''
 
   # ═══════════════════════════════════════════════════════════════════════════════
   #                           PROMPT CHAR                                         
@@ -290,7 +312,7 @@
   # ═══════════════════════════════════════════════════════════════════════════════
 
   function prompt_example() {
-    p10k segment -f 087 -i '' -t 'SebazGod'
+    p10k segment -f 087 -i '' -t '󰮇 SebazGod'
   }
   
   function prompt_example2() {
